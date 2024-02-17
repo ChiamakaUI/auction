@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import ErrorPage from 'next/error'
 import { useSearchParams } from "next/navigation";
 import {
   StreamVideoClient,
