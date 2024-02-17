@@ -1,13 +1,12 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   StreamVideoClient,
   StreamVideo,
   StreamCall,
   LivestreamLayout,
-  useCallStateHooks,
-} from "@stream-io/video-react-sdk";
+  } from "@stream-io/video-react-sdk";
 const apiKey = "ayr4n3fueb58";
 const token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiWnVieSJ9.g1cXbRH_tLzrUu8ngQW_k5gJ5UkHPcpig0S7OFBx-tk";
@@ -23,13 +22,13 @@ const client = new StreamVideoClient({ apiKey, user, token });
 const Main = () => {
   const [callLive, setCallLive] = useState(false);
   const searchParams = useSearchParams();
-  const { useIsCallLive } = useCallStateHooks();
+  // const { useIsCallLive } = useCallStateHooks();
   const callId = searchParams.get("call_id");
   const call = client.call("livestream", callId);
 
   // console.log(useIsCallLive)
-  const isCallLive = useIsCallLive();
-  console.log({ isCallLive });
+  // const isCallLive = useIsCallLive();
+  // console.log({ isCallLive });
   call.join();
   return (
     <StreamVideo client={client}>
