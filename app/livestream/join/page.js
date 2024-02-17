@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import ErrorPage from 'next/error'
 import { useSearchParams } from "next/navigation";
 import {
   StreamVideoClient,
@@ -26,6 +27,7 @@ const Main = () => {
   const callId = searchParams.get("call_id");
   const call = client.call("livestream", callId);
 
+  console.log("heyyy")
   // console.log(useIsCallLive)
   // const isCallLive = useIsCallLive();
   // console.log({ isCallLive });
