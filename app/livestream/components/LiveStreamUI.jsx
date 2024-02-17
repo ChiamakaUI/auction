@@ -1,6 +1,6 @@
 "use client"
-import { useCall, useCallStateHooks, ParticipantView } from "@stream-io/video-react-sdk"
 
+import { useCall, useCallStateHooks, ParticipantView } from "@stream-io/video-react-sdk"
 const LiveStreamUI = () => {
     const call = useCall();
     const { useIsCallLive, useLocalParticipant, useParticipantCount } =
