@@ -9,8 +9,8 @@ const LiveStreamUI = () => {
     const localParticipant = useLocalParticipant();
     const isCallLive = useIsCallLive();
     // const callId = sessionStorage.getItem("callId");
-    const callId = "main123"
-    console.log({ isCallLive });
+    // const callId = "main123"
+    // console.log({ isCallLive });
     return (
       <div>
         <div>Live: {totalParticipants}</div>
@@ -30,7 +30,7 @@ const LiveStreamUI = () => {
           )}
         </div>
         <div>
-          {window.location.href}/join?call_id={callId}
+          {/* {window.location.href}/join?call_id={callId} */}
           {/* https://myapp.com/join?call_id=123&call_type=default */}
         </div>
       </div>
