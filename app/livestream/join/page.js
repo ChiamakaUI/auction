@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-// import { useSearchParams } from "next/navigation";
+import { useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   StreamVideoClient,
   StreamVideo,
@@ -18,22 +18,18 @@ const user = {
   //   type: 'guest',
 };
 const client = new StreamVideoClient({ apiKey, user, token });
-// const callId = "main123"
 
 const Main = () => {
   const [callLive, setCallLive] = useState(false);
-  // const searchParams = useSearchParams();
-  // const { useIsCallLive } = useCallStateHooks();
-  // const callId = searchParams.get("call_id");
-  const callId = "main123"
+  const searchParams = useSearchParams();
+  const callId = searchParams.get("call_id");
+  // const callId = "main123"
   const call = client.call("livestream", callId);
 
-  console.log("heyyy")
-  // console.log(useIsCallLive)
-  // const isCallLive = useIsCallLive();
-  // console.log({ isCallLive });
+  // console.log("heyyy")
   call.join();
   return (
+    <Suspense fallback={<div>Call is not live yet </div>}>
     <StreamVideo client={client}>
       <StreamCall call={call}>
         {!callLive ? (
@@ -47,6 +43,7 @@ const Main = () => {
         )}
       </StreamCall>
     </StreamVideo>
+    </Suspense>
   );
 };
 
