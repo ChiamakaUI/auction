@@ -16,6 +16,5 @@ export const getProducts = async (id) => {
       userId: id
     }
   })
-  console.log(products)
   return products
 };

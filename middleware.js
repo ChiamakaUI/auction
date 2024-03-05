@@ -16,7 +16,7 @@ export async function middleware(request) {
   //   console.error(error);
   // }
   // subscribeAuthEvents(web3auth)
-  console.log(nextUrl)
+  // console.log(nextUrl)
   // return NextResponse.redirect(new URL('/room', request.url))
 }
  

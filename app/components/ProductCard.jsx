@@ -9,7 +9,7 @@ const ProductCard = ({ product, bidFunc }) => {
   const bid = {
     productId: product.id,
     userId: authenicatedUser.id,
-    price: product.price + 10,
+    price: Number(product.price + 10),
   };
 
   return (
