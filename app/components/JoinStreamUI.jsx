@@ -39,9 +39,9 @@ const JoinStreamUI = () => {
 
   const sendBid = (data) => {
     socket.emit("bids", data);
-
-    console.log("Bid sent")
+    console.log("Bid sent");
   };
+
 
   useEffect(() => {
     const getAuctionProducts = async () => {
@@ -64,7 +64,7 @@ const JoinStreamUI = () => {
         />
         <div>
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} bidFunc={sendBid}/>
+            <ProductCard key={product.id} product={product} bidFunc={sendBid} />
           ))}
         </div>
       </StreamCall>
